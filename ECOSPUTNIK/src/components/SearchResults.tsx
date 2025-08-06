@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { StarIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline';
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 import { useLanguage } from '@/hooks/useLanguage';
-import { translations } from '@/translations';
+
 
 interface SearchResult {
   id: number;
@@ -249,7 +249,7 @@ interface SearchResultsProps {
 ];
 
 export default function SearchResults({ results, isLoading = false, filters }: SearchResultsProps) {
-  const { language } = useLanguage();
+  // const { language } = useLanguage();
 
   const [sortBy, setSortBy] = React.useState('relevance');
 
