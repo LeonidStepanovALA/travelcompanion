@@ -55,7 +55,7 @@ interface EcoMeasuresRecommendationsProps {
   filter?: 'all' | 'energy' | 'water' | 'waste' | 'transport' | 'food';
 }
 
-export default function EcoMeasuresRecommendations({ filter }: EcoMeasuresRecommendationsProps) {
+export default function EcoMeasuresRecommendations({ }: EcoMeasuresRecommendationsProps) {
   const { language } = useLanguage();
   const [selectedMeasure, setSelectedMeasure] = useState<EcoMeasure | null>(null);
   const [showModal, setShowModal] = useState(false);

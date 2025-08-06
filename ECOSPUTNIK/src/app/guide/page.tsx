@@ -6,6 +6,18 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { translations } from '@/translations';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
+interface Course {
+  id: number;
+  title: string;
+  description: string;
+  duration: string;
+  level: string;
+  instructor: string;
+  status: 'enrolled' | 'completed' | 'available';
+  progress: number;
+  completionDate: string | null;
+}
+
 export default function GuideDashboard() {
   const { language, changeLanguage } = useLanguage();
   const t = translations[language];
@@ -165,7 +177,7 @@ export default function GuideDashboard() {
   const [activeSection, setActiveSection] = useState('profile');
   const [selectedAction, setSelectedAction] = useState<string | null>(null);
   const [showModal, setShowModal] = useState(false);
-  const [showStatModal, setShowStatModal] = useState(false);
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Моковые данные курсов для гидов
@@ -263,7 +275,7 @@ export default function GuideDashboard() {
   // Состояние для управления курсами
   const [courses, setCourses] = useState(mockCourses);
   const [showCourseModal, setShowCourseModal] = useState(false);
-  const [selectedCourse, setSelectedCourse] = useState<any>(null);
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [modalType, setModalType] = useState<'enroll' | 'continue' | 'certificate' | 'view' | null>(null);
 
   const handleAction = (action: string) => {
@@ -277,7 +289,7 @@ export default function GuideDashboard() {
   };
 
   // Функции для работы с курсами
-  const handleCourseAction = (course: any, action: 'enroll' | 'continue' | 'certificate' | 'view') => {
+  const handleCourseAction = (course: Course, action: 'enroll' | 'continue' | 'certificate' | 'view') => {
     setSelectedCourse(course);
     setModalType(action);
     setShowCourseModal(true);

@@ -250,7 +250,7 @@ interface SearchResultsProps {
 
 export default function SearchResults({ results, isLoading = false, filters }: SearchResultsProps) {
   const { language } = useLanguage();
-  const t = translations[language];
+
   const [sortBy, setSortBy] = React.useState('relevance');
 
   // Используем переданные результаты или mockResults, если результаты не переданы

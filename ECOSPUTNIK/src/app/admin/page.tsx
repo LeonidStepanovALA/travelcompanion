@@ -1745,7 +1745,7 @@ export default function AdminDashboard() {
 
   const handleSaveCourse = () => {
     if (courseForm.title && courseForm.description && courseForm.duration) {
-      const newCourse: Course = {
+      const _newCourse: Course = {
         id: mockCourses.length + 1,
         title: courseForm.title,
         description: courseForm.description,
@@ -1768,7 +1768,7 @@ export default function AdminDashboard() {
 
   const handleSaveEvent = () => {
     if (eventForm.title && eventForm.description && eventForm.date) {
-      const newEvent: CalendarEvent = {
+      const _newEvent: CalendarEvent = {
         id: (mockEvents.length + 1).toString(),
         title: eventForm.title,
         description: eventForm.description,

@@ -85,7 +85,7 @@ const PlaceholderImage = ({ type }: { type: string }) => {
 
 export default function PersonalizedRecommendations() {
   const { language } = useLanguage();
-  const t = translations[language];
+
 
   // Mock recommendations with bilingual support
   const mockRecommendations: Recommendation[] = [
