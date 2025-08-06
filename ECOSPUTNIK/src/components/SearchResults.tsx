@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { StarIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline';
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
-import { useLanguage } from '@/hooks/useLanguage';
+
 
 
 interface SearchResult {
