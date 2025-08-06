@@ -1,11 +1,9 @@
 {
-  "name": "ecosputnik",
   "version": 2,
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "projectId": "leonid-stepanovs-projects-80268281",
   "env": {
     "NEXT_PUBLIC_APP_NAME": "ECO Sputnik"
   },

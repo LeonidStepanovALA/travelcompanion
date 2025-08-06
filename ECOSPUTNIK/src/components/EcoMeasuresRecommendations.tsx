@@ -7,14 +7,6 @@ import {
   CloudIcon, 
   TrashIcon, 
   TruckIcon, 
-  PlusIcon,
-  PencilIcon,
-  EyeIcon,
-  XMarkIcon,
-  CheckCircleIcon,
-  ExclamationTriangleIcon,
-  MapPinIcon,
-  FunnelIcon,
   StarIcon
 } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -66,7 +58,6 @@ interface EcoMeasuresRecommendationsProps {
 
 export default function EcoMeasuresRecommendations({ filter = 'all' }: EcoMeasuresRecommendationsProps) {
   const { language } = useLanguage();
-  const t = translations[language];
   const [selectedMeasure, setSelectedMeasure] = useState<EcoMeasure | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [activeFilter, setActiveFilter] = useState<'all' | 'energy' | 'water' | 'waste' | 'transport' | 'food'>('all');
@@ -1485,7 +1476,7 @@ export default function EcoMeasuresRecommendations({ filter = 'all' }: EcoMeasur
       {/* Filter Section */}
       <div className="bg-white rounded-lg shadow-md p-6">
         <div className="flex items-center space-x-4 mb-4">
-          <FunnelIcon className="w-5 h-5 text-gray-600" />
+                          <BoltIcon className="w-5 h-5 text-gray-600" />
           <h3 className="text-lg font-semibold text-gray-800">
             {language === 'ru' ? 'Фильтр по категориям' : 'Filter by Categories'}
           </h3>
@@ -1513,7 +1504,7 @@ export default function EcoMeasuresRecommendations({ filter = 'all' }: EcoMeasur
       {/* Accommodation Section */}
       <div className="bg-white rounded-lg shadow-md p-6">
         <div className="flex items-center space-x-2 mb-4">
-          <MapPinIcon className="w-5 h-5 text-gray-600" />
+                          <StarIcon className="w-5 h-5 text-gray-600" />
           <h3 className="text-lg font-semibold text-gray-800">
             {language === 'ru' ? 'Отели и размещение' : 'Hotels & Accommodation'}
           </h3>
@@ -1579,7 +1570,7 @@ export default function EcoMeasuresRecommendations({ filter = 'all' }: EcoMeasur
               onClick={() => setSelectedLocation(null)}
               className="text-gray-500 hover:text-gray-700"
             >
-              <XMarkIcon className="w-5 h-5" />
+                              <StarIcon className="w-5 h-5" />
             </button>
           </div>
 
@@ -1730,7 +1721,7 @@ export default function EcoMeasuresRecommendations({ filter = 'all' }: EcoMeasur
               {measure.location && (
                 <div className="mb-3 p-2 bg-gray-50 rounded">
                   <div className="flex items-center space-x-1 text-sm text-gray-600">
-                    <MapPinIcon className="w-4 h-4" />
+                    <StarIcon className="w-4 h-4" />
                     <span>{measure.location}</span>
                   </div>
                   <div className="text-xs text-gray-500 ml-5">{measure.coordinates}</div>
@@ -1782,7 +1773,7 @@ export default function EcoMeasuresRecommendations({ filter = 'all' }: EcoMeasur
                 onClick={closeModal}
                 className="text-gray-500 hover:text-gray-700"
               >
-                <XMarkIcon className="w-6 h-6" />
+                <StarIcon className="w-6 h-6" />
               </button>
             </div>
             
