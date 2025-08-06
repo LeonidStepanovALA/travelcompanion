@@ -93,11 +93,11 @@ export default function CarbonReportPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
           <div className="bg-white p-4 md:p-6 rounded-lg shadow-md border-2 border-green-100">
             <div className="flex items-center justify-between mb-3 md:mb-4">
-              <h3 className="text-base md:text-lg font-semibold text-green-800">{t.totalFootprint}</h3>
+              <h3 className="text-base md:text-lg font-semibold text-green-800">Общий след</h3>
               <CloudIcon className="w-6 h-6 md:w-8 md:h-8 text-green-500" />
             </div>
             <p className="text-2xl md:text-3xl font-bold text-green-600">{mockCarbonData.summary.totalFootprint} т CO₂</p>
-            <p className="text-xs md:text-sm text-gray-600 mt-2">{t.forEntirePeriod}</p>
+            <p className="text-xs md:text-sm text-gray-600 mt-2">За весь период</p>
           </div>
 
           <div className="bg-white p-4 md:p-6 rounded-lg shadow-md border-2 border-green-100">
