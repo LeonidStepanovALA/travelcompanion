@@ -1,7 +1,7 @@
 import React from 'react';
 import { CloudIcon, SparklesIcon, ArrowTrendingDownIcon, CalendarIcon, CalculatorIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/hooks/useLanguage';
-import { translations } from '@/translations';
+
 
 
 
