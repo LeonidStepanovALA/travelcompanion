@@ -10,7 +10,6 @@ import {
   StarIcon
 } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/hooks/useLanguage';
-import { translations } from '@/translations';
 
 interface EcoMeasure {
   id: number;
@@ -56,7 +55,7 @@ interface EcoMeasuresRecommendationsProps {
   filter?: 'all' | 'energy' | 'water' | 'waste' | 'transport' | 'food';
 }
 
-export default function EcoMeasuresRecommendations({ filter = 'all' }: EcoMeasuresRecommendationsProps) {
+export default function EcoMeasuresRecommendations({ filter }: EcoMeasuresRecommendationsProps) {
   const { language } = useLanguage();
   const [selectedMeasure, setSelectedMeasure] = useState<EcoMeasure | null>(null);
   const [showModal, setShowModal] = useState(false);
@@ -1171,27 +1170,7 @@ export default function EcoMeasuresRecommendations({ filter = 'all' }: EcoMeasur
   };
 
   // Функция для расчета объектов, нуждающихся в зеленом финансировании
-  const calculateFundingNeeded = () => {
-    const locationsNeedingFunding = mockLocations.filter(location => {
-      // Исключаем "Глэмпинг "Алматинская область"" из автоматического расчета
-      if (location.id === 2) return false;
-      
-      const analysis = calculateLoadAnalysis(location, mockEcoMeasures);
-      return analysis.needsFunding || location.environmentalLoad > 70;
-    });
-    
-    return locationsNeedingFunding.map(location => {
-      const analysis = calculateLoadAnalysis(location, mockEcoMeasures);
-      const funding = calculateFundingRecommendation(location, mockEcoMeasures);
-      
-      return {
-        location,
-        analysis,
-        funding,
-        priority: location.environmentalLoad > 85 ? 'high' : location.environmentalLoad > 70 ? 'medium' : 'low'
-      };
-    }).sort((a, b) => b.location.environmentalLoad - a.location.environmentalLoad);
-  };
+
 
   const handleAutoCalculation = () => {
     setShowFundingNeeded(true);
@@ -1485,7 +1464,7 @@ export default function EcoMeasuresRecommendations({ filter = 'all' }: EcoMeasur
           {['all', 'energy', 'water', 'waste', 'transport', 'food'].map((filter) => (
             <button
               key={filter}
-              onClick={() => setActiveFilter(filter as any)}
+                              onClick={() => setActiveFilter(filter as 'all' | 'energy' | 'water' | 'waste' | 'transport' | 'food')}
               className={`px-4 py-2 rounded-lg transition-colors ${
                 activeFilter === filter
                   ? 'bg-green-600 text-white'
