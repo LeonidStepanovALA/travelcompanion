@@ -303,9 +303,9 @@ export default function GuideDashboard() {
 
   const handleEnroll = () => {
     if (selectedCourse) {
-      const updatedCourses = courses.map(course => 
+      const updatedCourses: Course[] = courses.map(course => 
         course.id === selectedCourse.id 
-          ? { ...course, status: 'enrolled', progress: 0 }
+          ? { ...course, status: 'enrolled' as const, progress: 0 }
           : course
       );
       setCourses(updatedCourses);
@@ -317,12 +317,12 @@ export default function GuideDashboard() {
   const handleContinue = () => {
     if (selectedCourse) {
       const newProgress = Math.min(selectedCourse.progress + 25, 100);
-      const updatedCourses = courses.map(course => 
+      const updatedCourses: Course[] = courses.map(course => 
         course.id === selectedCourse.id 
           ? { 
               ...course, 
               progress: newProgress,
-              status: newProgress === 100 ? 'completed' : 'enrolled',
+              status: newProgress === 100 ? 'completed' as const : 'enrolled' as const,
               completionDate: newProgress === 100 ? new Date().toISOString().split('T')[0] : course.completionDate
             }
           : course
