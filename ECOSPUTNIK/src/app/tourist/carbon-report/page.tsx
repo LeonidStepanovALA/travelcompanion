@@ -7,7 +7,7 @@ import { translations } from '@/translations';
 
 export default function CarbonReportPage() {
   const { language } = useLanguage();
-  const t = translations[language];
+  // const t = translations[language];
 
   // Mock carbon data with bilingual support
   const mockCarbonData = {
