@@ -181,7 +181,7 @@ export default function GuideDashboard() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Моковые данные курсов для гидов
-  const mockCourses = [
+  const mockCourses: Course[] = [
     {
       id: 1,
       title: t.courseBasicEcoTourism,
@@ -189,7 +189,7 @@ export default function GuideDashboard() {
       duration: '40 часов',
       level: t.beginner,
       instructor: t.instructorAigul,
-      status: 'enrolled',
+      status: 'enrolled' as const,
       progress: 75,
       completionDate: '2024-12-15'
     },
@@ -200,7 +200,7 @@ export default function GuideDashboard() {
       duration: '60 часов',
       level: t.advanced,
       instructor: t.instructorMarat,
-      status: 'completed',
+      status: 'completed' as const,
       progress: 100,
       completionDate: '2024-10-20'
     },
@@ -211,7 +211,7 @@ export default function GuideDashboard() {
       duration: '50 часов',
       level: t.intermediate,
       instructor: t.instructorAnna,
-      status: 'available',
+      status: 'available' as const,
       progress: 0,
       completionDate: null
     },
@@ -222,7 +222,7 @@ export default function GuideDashboard() {
       duration: '45 часов',
       level: t.intermediate,
       instructor: t.instructorDmitry,
-      status: 'available',
+      status: 'available' as const,
       progress: 0,
       completionDate: null
     },
@@ -233,7 +233,7 @@ export default function GuideDashboard() {
       duration: '35 часов',
       level: t.beginner,
       instructor: t.instructorElena,
-      status: 'enrolled',
+      status: 'enrolled' as const,
       progress: 30,
       completionDate: null
     },
@@ -244,7 +244,7 @@ export default function GuideDashboard() {
       duration: '25 часов',
       level: t.beginner,
       instructor: t.instructorSergey,
-      status: 'available',
+      status: 'available' as const,
       progress: 0,
       completionDate: null
     },
@@ -255,7 +255,7 @@ export default function GuideDashboard() {
       duration: '30 часов',
       level: t.intermediate,
       instructor: t.instructorOlga,
-      status: 'completed',
+      status: 'completed' as const,
       progress: 100,
       completionDate: '2024-09-15'
     },
@@ -266,7 +266,7 @@ export default function GuideDashboard() {
       duration: '20 часов',
       level: t.beginner,
       instructor: t.instructorMarina,
-      status: 'available',
+      status: 'available' as const,
       progress: 0,
       completionDate: null
     }
