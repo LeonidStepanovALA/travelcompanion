@@ -86,7 +86,7 @@ export default function CarbonReportPage() {
     <div className="container mx-auto px-4 py-6 md:py-8">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-2xl md:text-3xl font-bold text-green-800 mb-6 md:mb-8">
-          {t.carbonFootprintReport}
+          Отчет о углеродном следе
         </h1>
 
         {/* Основная статистика */}
